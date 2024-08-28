@@ -86,6 +86,20 @@ print("\n")
         }
  
     }
+
+func reverseTraverse() {
+            if let head = head {
+            print("\n")
+                revTrav(head)
+            } 
+        }
+        func revTrav(_ current: Node?) {
+            if let curr = current {
+                revTrav(curr.next)
+                print(curr.value,terminator:" -> ")
+            }
+        }
+
 }
  
 var linkedlist = myLinkedlist()
@@ -101,3 +115,4 @@ linkedlist.addAfter(at:5,no:6)
 linkedlist.traverseNode()
 linkedlist.deleteNode(5)
 linkedlist.traverseNode()
+linkedlist.reverseTraverse()
