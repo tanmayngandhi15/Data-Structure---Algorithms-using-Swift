@@ -41,6 +41,24 @@ class myBST {
         preOrderTraversal(current.left)
         preOrderTraversal(current.right)
     }
+
+    func inOrderTraversal(_ head: Node?) {
+        
+        guard let current = head else { return }
+        
+        inOrderTraversal(current.left)
+        print(current.value)
+        inOrderTraversal(current.right)
+    }
+    
+    func postOrderTraversal(_ head: Node?) {
+        
+        guard let current = head else { return }
+        
+        postOrderTraversal(current.left)
+        postOrderTraversal(current.right)
+        print(current.value)
+    }
     
     
 }
@@ -52,4 +70,10 @@ head = mybst.insert(head, 4)
 head = mybst.insert(head, 6)
 head = mybst.insert(head, 8)
 head = mybst.insert(head, 0)
+
 mybst.preOrderTraversal(head)
+print("\n")
+mybst.inOrderTraversal(head)
+print("\n")
+mybst.postOrderTraversal(head)
+print("\n")
